@@ -397,17 +397,22 @@ section h2::after {
 .contact-icon {
   color: #2c3e50;
   font-size: 1.5em;
-  margin-right: 10px;
   vertical-align: middle;
 }
 
+/* Adjust title for smaller screens */
+.contact-title {
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+/* Contact Section Details */
 .contact-detail-icon {
   color: #2575fc;
   font-size: 1.1em;
   vertical-align: middle;
 }
 
-/* Contact Section Text */
 #Contact p {
   font-size: 18px;
   margin: 10px 0;
@@ -424,6 +429,15 @@ section h2::after {
   color: #6a11cb;
   transition: color 0.3s ease;
 }
+
+/* Responsive font size for heading */
+@media (max-width: 576px) {
+  .contact-title {
+    font-size: 1.3rem;
+  }
+}
+
+
 
 .footer {
   background: linear-gradient(135deg, #2c3e50, #34495e);
