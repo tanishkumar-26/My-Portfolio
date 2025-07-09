@@ -355,6 +355,7 @@ section h2::after {
   background: #2575fc;
 }
 
+/* Project */
 .projects-icon {
   color: #2c3e50;
   font-size: 1.5em;
@@ -367,23 +368,45 @@ section h2::after {
   -webkit-overflow-scrolling: touch;
 }
 
-.project-carousel .card {
+.project-card {
   scroll-snap-align: start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-carousel .card:hover {
+.project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.project-carousel img {
+.project-card img {
   max-height: 200px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
+  width: 100%;
 }
 
+.github-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  color: #000;
+  border-radius: 50%;
+  padding: 6px 8px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.github-icon:hover {
+  transform: scale(1.2);
+  color: #333;
+}
 
 /* Resume Section Icon */
 .resume-icon {
