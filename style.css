@@ -314,45 +314,91 @@ section h2::after {
 }
 
 
-#skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-}
-
-.skills-icon {
-  color: #2c3e50;
-  font-size: 1.5em;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-/* Skill Icons inside list */
-.skill-icon {
-  color: #fff;
-  font-size: 1.1em;
-  vertical-align: middle;
-}
-
-/* Update for styled skill list */
-#skills li {
-  background: #6a11cb;
-  color: #fff;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 20px;
-  display: inline-flex;
+/* Skills  */
+.skills-section {
+  background-color: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
-  transition: transform 0.3s ease, background 0.3s;
-  cursor: default;
+}
+        
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
 }
 
-#skills li:hover {
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #4a6bff;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+        
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+        
+.skill-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+        
+.skill-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover img {
   transform: scale(1.1);
-  background: #2575fc;
+}
+        
+.skill-item span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+              
+  .skill-item {
+    padding: 1.2rem 0.8rem;
+  }
+              
+  .skill-item img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+            
+  .skill-item span {
+    font-size: 0.9rem;
+  }  
 }
 
 /* Project */
