@@ -32,7 +32,7 @@
     <!-- Brand with icon -->
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
       <img src="tanish.png" alt="Logo" width="32" height="32" class="rounded-circle" />
-      Portfolio
+      <span class="typing-animation" id="typewriter"></span>
     </a>
     
     <!-- Toggler for mobile -->
@@ -394,6 +394,45 @@
 </footer>
 
 <!-- Bootstrap JS -->
+<script>
+  const words = ["Tanish Kumar", "Full Stack Developer", "MERN Stack Dev"];
+  let i = 0;
+  let timer;
+
+  function typingEffect(wordIndex = 0, charIndex = 0) {
+    const typingElement = document.getElementById("typewriter");
+    const currentWord = words[wordIndex];
+    typingElement.textContent = currentWord.slice(0, charIndex);
+
+    if (charIndex < currentWord.length) {
+      timer = setTimeout(() => typingEffect(wordIndex, charIndex + 1), 150);
+    } else {
+      setTimeout(() => eraseEffect(wordIndex), 1500);
+    }
+  }
+
+  function eraseEffect(wordIndex = 0, charIndex = null) {
+    const typingElement = document.getElementById("typewriter");
+    const currentWord = words[wordIndex];
+    if (charIndex === null) charIndex = currentWord.length;
+
+    typingElement.textContent = currentWord.slice(0, charIndex);
+
+    if (charIndex > 0) {
+      timer = setTimeout(() => eraseEffect(wordIndex, charIndex - 1), 100);
+    } else {
+      const nextIndex = (wordIndex + 1) % words.length;
+      setTimeout(() => typingEffect(nextIndex, 0), 500);
+    }
+  }
+
+  // Start typing on load
+  document.addEventListener("DOMContentLoaded", () => {
+    typingEffect();
+  });
+</script>
+
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 
   document.querySelector('.scroll-to-top').addEventListener('click', function (e) {
