@@ -51,6 +51,31 @@ header {
     top: 0;
     z-index: 1000;
 }
+
+<style>
+.typing-animation {
+  font-weight: bold;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #000;
+  width: 0;
+  animation: typing 3s steps(30, end) infinite, blink 0.75s step-end infinite;
+  display: inline-block;
+  max-width: 250px;
+  color: #000; /* Change if you want */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+</style>
+
  
 .navbar-brand img {
   transition: transform 0.3s ease;
